@@ -1,16 +1,24 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-#f
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
+from DiffieHellman import DiffieHellman
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    p = 283
+    q = 12
+    nA = 31
+    nB = 56
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    # Создание объектов для пользователей A и B
+    user_A = DiffieHellman(p, q, private_key=nA)
+    user_B = DiffieHellman(p, q, private_key=nB)
+
+    # Генерация открытых ключей для A и B
+    user_A.generate_public_key()
+    user_B.generate_public_key()
+
+    # Обмен открытыми ключами и вычисление общего ключа
+    user_A.generate_shared_key(user_B.public_key)
+    user_B.generate_shared_key(user_A.public_key)
+
+    # Вывод результатов
+    print(f"Public key for user A: {user_A.public_key}")
+    print(f"Public key for user B: {user_B.public_key}")
+    print(f"Shared key for user A: {user_A.shared_key}")
+    print(f"Shared key for user B: {user_B.shared_key}")
