@@ -1,0 +1,12 @@
+Ханафин Тимур 4231
+Variant 13
+ TASK 1 El-Gamal algorithm (crypto)
+Users A and B set connection one to another by means of  El-Gamal algoritm with  the following parameters: 
+pA=  127  gA=   7   xA=   63   kA=   25 
+pB=   97  gB=  10   xB=   48   kB=   19    
+1) Open key A=?  Open key B=? 
+2) What data A should send to B to set the connection?
+3) What data B should send to A to set the connection?
+User A wish send open text MA=   31 to B.
+4) What cryptptext A should send to B?
+5) B sent to A cryptotext {a,b}={  67, 103}. Decrypt the cryptotext. 
